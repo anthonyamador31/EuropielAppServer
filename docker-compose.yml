@@ -1,0 +1,21 @@
+version: '2'
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
+services:
+  webapp:
+    container_name: WEBAPP
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      VIRTUAL_HOST: europiel.fazguz.com
+      LETSENCRYPT_HOST: europiel.fazguz.com
+      LETSENCRYPT_EMAIL: jaguz.guzman@gmail.com
+      command: npm run app
+    volumes:
+      - ${PWD}:/opt/app/
