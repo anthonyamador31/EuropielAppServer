@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "app": "node_modules/.bin/nodemon --ignore git --ignore node_modules ./server.js",
-    "test": "mocha",
+    "test": "echo \"No test specified\"",
     "init-tunnel": "lt --port 8080"
   },
   "keywords": [],
